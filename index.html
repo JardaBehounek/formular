@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Formulář</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="formular.php" method="post">
+            <fieldset>
+                <h1>Uživatel</h1>
+                <p><span class="required">* nutno vyplnit</span></p>
+                <table>
+                    <tr>
+                        <td><label for="firstname">Jméno</label></td>
+                        <td><input type="text" name="firstname" id="firstname" /><span class="required">*</span></td>
+                        <td><label for="lastname">Příjmení</label></td>
+                        <td><input type="text" name="lastname" id="lastname" /><span class="required">*</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="street">Ulice, č.p.</label></td>
+                        <td><input type="text" name="street" id="street" /><span class="required">*</span></td>
+                        <td><label for="city"> Bydliště </label></td>
+                        <td><input type="text" name="city" id="city" /><span class="required">*</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="zip_code">PSČ</label></td>
+                        <td><input type="text" name="zip_code" id="zip_code" /><span class="required">*</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email</label></td>
+                        <td><input type="email" name="email" id="email" /><span class="required">*</span></td>
+                        <td><label for="phone">Telefon</label></td>
+                        <td><input type="tel" name="phone" id="phone" /><span class="required">*</span></td>
+                    </tr>
+                </table>
+            
+                <h1>Produkt</h1>
+                <table>
+                    <tr>
+                        <td><label for="product_name"> Název produktu</label></td>
+                        <td><input type="text" name="product_name" id="product_name" /><span class="required">*</span></td>
+                    </tr>
+                    <tr>
+                        <td><label for="pcs">Počet kusů</label></td>
+                        <td><input type="number" name="pcs" id="pcs" value="1"/></td>
+                    </tr>
+                    <tr>
+                        <td><label for="price"> Cena bez DPH</label></td>
+                        <td><input type="number" name="price" id="price" value="0" /></td>
+                        
+                    </tr>
+                    <tr>
+                        <td><label for="tax">DPH</td>
+                        <td><select name="tax" id="tax">
+                            <option value="0.21">21%</option>
+                            <option value="0.15">15%</option>
+                            <option value="0.10">10%</option>
+                            <option value="0">0%</option>
+                        </select></td>
+                    </tr>
+                </table>
+                <h3>Celková cena: <span id="totalPrice"></span>Kč</h3>
+                <input type="submit" id="send" name="send" value="Odeslat"/>
+            </fieldset>
+        </form>
+    </div>
+
+    <script src="script.js"></script>    
+  </body>
+</html>
